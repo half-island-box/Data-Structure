@@ -1,3 +1,0 @@
-D:/clion/数据结构大作业/calculator/cmake-build-debug/CMakeFiles/calculator.dir
-D:/clion/数据结构大作业/calculator/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/clion/数据结构大作业/calculator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
