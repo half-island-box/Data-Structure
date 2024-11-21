@@ -9,14 +9,27 @@
 
 
 
-HuffmanTree::HuffmanTree(map<char,int>& arr, int n) {
+HuffmanTree::HuffmanTree(string str) {
 
+    //map类型构建字符频数的字典
+    map<char,int> freq;
+    for(int i=0; i<str.length(); i++) {
+        if(str[i]=='\r') continue; //\r和\n都会产生换行，只记录一个即可
+        if(freq.find(str[i])==freq.end()) {
+            freq[str[i]]=1;
+        }
+        else {
+            freq[str[i]]++;
+        }
+    }
+
+    int n=freq.size()-1;
     this->size=n;
     int m=2*n-1;
     this->T=new HNode [m+1];
     //前n个存放叶子节点 其余空间用于构造
     int i=1;
-    for(map<char,int>::iterator it=++arr.begin();it!=arr.end();it++){
+    for(map<char,int>::iterator it=++freq.begin();it!=freq.end();it++){
         T[i].left=T[i].right=T[i].parent=0;
         T[i].c=*it;
         i++;
@@ -103,7 +116,7 @@ void HuffmanTree::Code_Create() {
     //         continue;
     //     }
     //     if(T[i].c.first=='\r') {
-    //         cout<<"/r"<<" "<<code[T[i].c.first]<<endl;
+    //         cout<<"r"<<" "<<code[T[i].c.first]<<endl;
     //         continue;
     //     }
     //

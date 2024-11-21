@@ -26,7 +26,7 @@ class HuffmanTree {
     HNode* T;
     int size;
 
-    HuffmanTree(map<char,int>& arr, int n);
+    HuffmanTree( string str);
     void select(int n, int& m1, int& m2);
     void Code_Create();
     string Code_Decoded(string str);
@@ -35,7 +35,7 @@ class HuffmanTree {
     ~HuffmanTree();
 };
 
-HuffmanTree hfm_tree(string& str);
+//HuffmanTree hfm_tree(string& str);
 
 
 
