@@ -28,10 +28,11 @@ class HuffmanTree {
 
     HuffmanTree( string str);
     void select(int n, int& m1, int& m2);
-    void Code_Create();
-    string Code_Decoded(string str);
-    string Code_Coding(string str);
-    void Print_Tree(int root, ofstream& outFile, int space , int height);
+    void Code_Create(); //根据赫夫曼树生成编码集
+    string Code_Decoded(string str); //译码0-1串
+    string Code_Coding(string str); //文本编码成0-1串
+    void Print_Tree(int root, ofstream& outFile, int space , int height); //打印赫夫曼树
+    double Compression_Ratio(string code_encoded, string code_decoded); //计算压缩率
     ~HuffmanTree();
 };
 

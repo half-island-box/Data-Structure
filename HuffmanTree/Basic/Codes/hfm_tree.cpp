@@ -100,9 +100,9 @@ int main() {
     }
     tree.Print_Tree(root, outFile3,0,8);
 
-    // 关闭文件
-    outFile3.close();
-    cout << "write success" << endl;
+    //计算压缩率
+    double ratio=tree.Compression_Ratio(code_encoded, code_decoded);
+    cout<<ratio<<endl;
 
 
     return 0;

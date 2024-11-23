@@ -106,23 +106,7 @@ void HuffmanTree::Code_Create() {
         reverse(code[T[i].c.first].begin(), code[T[i].c.first].end());
     }
 
-    // for(int i=1; i<=size; i++) {
-    //     if(T[i].c.first==' ') {
-    //         cout<<"blank"<<" "<<code[T[i].c.first]<<endl;
-    //         continue;
-    //     }
-    //     if(T[i].c.first=='\n') {
-    //         cout<<"enter"<<" "<<code[T[i].c.first]<<endl;
-    //         continue;
-    //     }
-    //     if(T[i].c.first=='\r') {
-    //         cout<<"r"<<" "<<code[T[i].c.first]<<endl;
-    //         continue;
-    //     }
-    //
-    //
-    //     cout<<T[i].c.first<<" "<<code[T[i].c.first]<<endl;
-    // }
+
 
 }
 
@@ -181,6 +165,15 @@ void HuffmanTree::Print_Tree(int root, ofstream& outFile, int space = 0, int hei
 
     // 递归打印左子树
     this->Print_Tree(T[root].left, outFile, space + height);
+}
+
+//计算压缩率
+double HuffmanTree::Compression_Ratio(string code_encoded, string code_decoded) {
+    double space_encoded, space_decoded;
+    space_encoded=code_encoded.length(); //编码文本，每一个0或1占一个bit
+    space_decoded=code_decoded.length()*8; //译码文本，每个char占1字节，即8bits
+    double ratio=(space_decoded-space_encoded)/space_decoded;
+    return ratio;
 }
 
 
